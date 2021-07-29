@@ -39,7 +39,7 @@
 
 <script src="./scripts/common.js"></script>
 
-        <link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
+        <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./lib/swiper/swiper.min.css"/>
         <link rel="stylesheet" href="./styles/app.css">
@@ -76,7 +76,9 @@
                         </div>
                         <div class="nav-center">
                             <div class="logo">
-                                <img src="./images/logo/logo.svg" alt="logo" />
+                                <div class="logo-img">
+                                    <img src="./images/logo/logo.svg" alt="logo" />
+                                </div>
                                 <div class="info">投資理財網</div>
                             </div>
                             <ul class="nav-list">
@@ -101,13 +103,12 @@
                     <div class="swiper-slide" style="background-image: url(./images/banner/banner_pc.jpg);"></div>
                     <div class="swiper-slide" style="background-image: url(./images/banner/banner_pc.jpg);"></div>
                     <div class="swiper-slide" style="background-image: url(./images/banner/banner_pc.jpg);"></div>
-                    <div class="swiper-slide" style="background-image: url(./images/banner/banner_pc.jpg);"></div>
                 </div>
                 <div class="swiper-bundle-container">
                     <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <span class="swiper-count">1</span>
+                    <span class="swiper-count">01</span>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
 
@@ -119,13 +120,15 @@
                     <div class="swiper-slide" style="background-image: url(./images/banner/banner_mobile.jpg);"></div>
                     <div class="swiper-slide" style="background-image: url(./images/banner/banner_mobile.jpg);"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-bundle-container">
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- <div class="swiper-button-next"></div> -->
+                <!-- <div class="swiper-button-prev"></div> -->
             </div>
 
             <!-- 側邊欄 -->
-            <!-- <ul class="sidebar-list">
+            <ul class="sidebar-list">
                 <li class="sidebar-item">
                     <a class="sidebar-link" data-toggle="modal" data-target="#exampleModal">
                         <div class="sidebar-icon"><i class="common-icon sidebar-order"></i></div>
@@ -150,7 +153,7 @@
                         <div>立即開戶</div>
                     </a>
                 </li>
-            </ul> -->
+            </ul>
 
 
             <!-- Modal -->
@@ -454,20 +457,34 @@
                     pagination: {
                         el: '.swiper-container-pc .swiper-pagination',
                     },
+                    loop: true,
+                    noSwiping: false,
+                    allowTouchMove: false,
+                    breakpoints: {
+                        1024: {
+                            noSwiping: true,
+                            allowTouchMove: true,
+                        },
+                    },
                 });
 
                 var swiperMobile = new Swiper('.swiper-container-mobile', {
-                    navigation: {
-                        nextEl: '.swiper-container-mobile .swiper-button-next',
-                        prevEl: '.swiper-container-mobile .swiper-button-prev',
-                    },
                     pagination: {
                         el: '.swiper-container-mobile .swiper-pagination',
                     },
                 });
 
                 swiperPc.on('slideChange', function () {
-                    $('.swiper-count').text(this.realIndex+1);
+                    if((this.realIndex+1) < 10){
+                        $('.swiper-count').text("0"+(this.realIndex+1));
+                    }else{
+                        $('.swiper-count').text(this.realIndex+1);
+                    }
+                    swiperMobile.slideTo(this.realIndex);
+                });
+
+                swiperMobile.on('slideChange', function () {
+                    swiperPc.slideTo(this.realIndex+1);
                 });
             } );
         </script>
