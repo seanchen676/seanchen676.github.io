@@ -2,6 +2,9 @@
 
 $(function () {
   $('#ranking-tabs').tabs();
+  $('#calculator-tabs').tabs();
+  $('#singleInvestment-tabs').tabs();
+  $('#dollarCostAveraging-tabs').tabs();
   $('#news-tabs').tabs();
   $('#board-tabs').tabs();
   var swiperPc = new Swiper('.swiper-container-pc', {
@@ -35,6 +38,16 @@ $(function () {
     } else {
       $('.swiper-count').text(this.realIndex + 1);
     }
+
+    ;
+  });
+  swiperPc.on('slideChangeTransitionEnd', function () {
+    var swiperPcIndex = $('.swiper-container-pc').find('.swiper-slide-active').attr('data-swiper-slide-index');
+    swiperMobile.slideToLoop(parseInt(swiperPcIndex));
+  });
+  swiperMobile.on('slideChangeTransitionEnd', function () {
+    var swiperMobileIndex = $('.swiper-container-mobile').find('.swiper-slide-active').attr('data-swiper-slide-index');
+    swiperPc.slideToLoop(parseInt(swiperMobileIndex));
   });
   $('.swiper-slide').on('click', function () {
     $('.swiper-slide').removeClass('active');
@@ -67,7 +80,7 @@ $(function () {
     }, 300);
   });
   var boardTabsItemIndex = 0;
-  $('.active-line').css('left', 0).css('width', $('.board-tabs-item').first().get()[0].clientWidth);
+  $('.board-tabs-active-line').css('left', $('.board-tabs-item').first().get()[0].offsetLeft).css('width', $('.board-tabs-item').first().get()[0].clientWidth);
   $('.board-tabs-item').on('click', function () {
     boardTabsItemIndex = $(this).index();
     var itemRef = {
@@ -77,7 +90,7 @@ $(function () {
     };
 
     if (itemRef) {
-      $('.active-line').css('left', itemRef.left).css('width', itemRef.width);
+      $('.board-tabs-active-line').css('left', itemRef.left).css('width', itemRef.width);
     }
   });
   $(window).resize(function () {
@@ -87,7 +100,31 @@ $(function () {
     };
 
     if (itemRef) {
-      $('.active-line').css('left', itemRef.left).css('width', itemRef.width);
+      $('.board-tabs-active-line').css('left', itemRef.left).css('width', itemRef.width);
+    }
+  });
+  var calculatorTabsItemIndex = 0;
+  $('.calculator-tabs-active-line').css('left', $('.calculator-tabs-item').first().get()[0].offsetLeft).css('width', $('.calculator-tabs-item').first().get()[0].clientWidth);
+  $('.calculator-tabs-item').on('click', function () {
+    calculatorTabsItemIndex = $(this).index();
+    var itemRef = {
+      index: $(this).index(),
+      width: $(this).get()[0].clientWidth,
+      left: $(this).get()[0].offsetLeft
+    };
+
+    if (itemRef) {
+      $('.calculator-tabs-active-line').css('left', itemRef.left).css('width', itemRef.width);
+    }
+  });
+  $(window).resize(function () {
+    var itemRef = {
+      width: $('.calculator-tabs-item').eq(calculatorTabsItemIndex).get()[0].clientWidth,
+      left: $('.calculator-tabs-item').eq(calculatorTabsItemIndex).get()[0].offsetLeft
+    };
+
+    if (itemRef) {
+      $('.calculator-tabs-active-line').css('left', itemRef.left).css('width', itemRef.width);
     }
   });
   $('#BackTop').click(function () {
@@ -102,4 +139,90 @@ $(function () {
       $('#BackTop').stop().fadeOut(150);
     }
   }).scroll();
+  $('.keyword-input').on('input', function () {
+    if ($(this).val() == '') {
+      $(this).css('color', '#E60000');
+    } else {
+      $(this).css('color', '#333333');
+    }
+  });
+  $('.dropdown-item').on('click', function () {
+    var text = $(this)[0].innerText;
+    $(this).parents('.dropdown-menu').siblings('.btn').text(text);
+    $(this).parents('.select-pc').siblings('.select-mobile').find('select').val(text);
+  });
+  $('.filter-select').on('change', function () {
+    var text = $(this).val();
+    $(this).parents('.select-mobile').siblings('.select-pc').find('.btn').text(text);
+  });
+  $('.range-control').rangeslider({
+    polyfill: false
+  });
+  $('.calculator-tabs-item').on('click', function () {
+    var text = $(this).attr('aria-controls');
+    var childtext = $(this).parents('.calculator-tabs-list').siblings('#' + text).find('.ui-state-active').attr('aria-controls');
+    $(this).parents('.calculator-tabs-list').siblings('#' + text).find('#' + childtext).find('.range-control').rangeslider('update', true);
+  });
+  $('.calculator-common-tabs-item').on('click', function () {
+    var text = $(this).attr('aria-controls');
+    $(this).parents('.calculator-common-tabs-list').siblings('#' + text).find('.range-control').rangeslider('update', true);
+  });
+  $('.range-control').on('input', function () {
+    var value = $(this).val();
+    $(this).parents('.input-range-group').siblings('.input-text-group').find('input').val(toCurrency(value));
+  });
+
+  function toCurrency(num) {
+    var num_parts = num.toString().split('.');
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return num_parts.join('.');
+  }
+
+  function inputNumber(e) {
+    var code = e.keyCode;
+
+    if ((code < 48 || code > 57) && code !== 190 && code !== 8 && code !== 9 && (code < 96 || code > 105)) {
+      e.preventDefault();
+    }
+  }
+
+  function InputCheckMax(value, max) {
+    if (value >= max) {
+      return max;
+    } else {
+      return value;
+    }
+  }
+
+  function InputCheckMin(value, min) {
+    if (value <= min) {
+      return min;
+    } else {
+      return value;
+    }
+  }
+
+  $('.calculator-input').on('keydown', function (e) {
+    inputNumber(e);
+  });
+  $('.calculator-input').on('input', function (e) {
+    var value = $(this).val().split(',').join('');
+    var min = $(this).data('min');
+    var max = $(this).data('max');
+    var result = InputCheckMax(value, max);
+
+    if (result <= min) {
+      $(this).parents('.input-text-group').siblings('.input-range-group').find('input').val(min).change();
+    } else {
+      $(this).parents('.input-text-group').siblings('.input-range-group').find('input').val(result).change();
+    }
+
+    $(this).val(toCurrency(result));
+  });
+  $('.calculator-input').on('blur', function (e) {
+    var value = $(this).val().split(',').join('');
+    var min = $(this).data('min');
+    var result = InputCheckMin(value, min);
+    $(this).val(toCurrency(result));
+  });
 });
