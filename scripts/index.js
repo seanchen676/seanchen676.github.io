@@ -1,9 +1,5 @@
 "use strict";
 
-require("./backToTop");
-
-require("./header");
-
 $(function () {
   $('#ranking-tabs').tabs();
   $('#calculator-tabs').tabs();
