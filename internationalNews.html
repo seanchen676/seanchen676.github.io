@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover' name='viewport' />
         <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover' name='viewport' />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <meta name="title" content="遠東商銀 - 投資理財網" />
 <meta name="description" content="" />
@@ -55,8 +55,9 @@
         </div>
     </div>
     <header>
+        <!-- PC -->
         <nav class="nav-bar">
-            <div class="nav-left">
+            <div class="nav-container">
                 <div class="hamburger-box">
                     <div class="hamburger-menu">
                         <span></span>
@@ -64,127 +65,284 @@
                         <span></span>
                     </div>
                 </div>
+                <div class="logo-container">
+                    <a href="/" class="logo">
+                        <div class="logo-img">
+                            <img src="./images/logo/logo.svg" alt="logo" />
+                        </div>
+                        <div class="info">投資理財網</div>
+                    </a>
+                </div>
+                <div class="user-box">
+                    <i class="fal fa-user fa-lg"></i>
+                </div>
             </div>
-            <div class="nav-center">
-                <a href="/" class="logo">
-                    <div class="logo-img">
-                        <img src="./images/logo/logo.svg" alt="logo" />
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">樂選基金</a>
+                    <!-- 樂選基金 -->
+                    <div class="unit unit-left">
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金績效搜尋</span></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金進階搜尋</span></a></li> 
+                            </ul>
+                        </div>
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>最新配息查詢</span></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金公司查詢</span></a></li> 
+                            </ul>
+                        </div>
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>樂知基金學堂</span></a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="info">投資理財網</div>
-                </a>
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">樂選基金</a>
-                        <!-- 樂選基金 -->
-                        <div class="menu menu-left">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金績效搜尋</span></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金進階搜尋</span></a></li> 
-                                </ul>
-                            </div>
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                    <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>最新配息查詢</span></a></li> 
-                                    <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金公司查詢</span></a></li> 
-                                 </ul>
-                            </div>
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                    <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>樂知基金學堂</span></a></li>
-                                 </ul>
-                            </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">基金點閱排行</a>
+                    <div class="unit unit-left">
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>優質特選基金</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>核心配置首選</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>本行熱銷排行</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li>
+                            </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">基金點閱排行</a>
-                        <div class="menu menu-left">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>優質特選基金</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>核心配置首選</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>本行熱銷排行</span><i class="common-icon menu-top10 icon-lg mgl-1 mgb-1"></i></a></li>
-                                </ul>
-                            </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">遠銀投資觀點</a>
+                    <div class="unit unit-left">
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-movie icon-sm mgr-1"></i><span>遠銀市場觀點</span></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>投研財經展望</span></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>市場話題時事</span></a></li>
+                            </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">遠銀投資觀點</a>
-                        <div class="menu menu-left">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-movie icon-sm mgr-1"></i><span>遠銀市場觀點</span></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>投研財經展望</span></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>市場話題時事</span></a></li>
-                                </ul>
-                            </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">樂富財經訊息</a>
+                    <div class="unit unit-right">
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>國際金融資訊</span></a></li>
+                                <div class="unit-box">
+                                    <ul class="unit-box-list">
+                                        <li class="unit-box-item"><a href="/internationalNews.html"><i class="common-icon menu-sm"></i>國際財經新聞</a></li>
+                                        <li class="unit-box-item"><a href="/internationalEconomic.html"><i class="common-icon menu-sm"></i>各國經濟情勢</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">樂富財經訊息</a>
-                        <div class="menu menu-right">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>國際金融資訊</span></a></li>
-                                    <div class="menu-box">
-                                        <ul class="menu-box-list">
-                                            <li class="menu-box-item"><a href="/internationalNews.html"><i class="common-icon menu-sm"></i>國際財經新聞</a></li>
-                                            <li class="menu-box-item"><a href="/internationalEconomic.html"><i class="common-icon menu-sm"></i>各國經濟情勢</a></li>
-                                        </ul>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金資訊</span></a></li>
-                                   <div class="menu-box">
-                                        <ul class="menu-box-list">
-                                            <li class="menu-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>基金新聞</a></li>
-                                            <li class="menu-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>境外基金休市公告</a></li>
-                                            <li class="menu-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>國內基金休市公告</a></li>
-                                        </ul>
-                                    </div>
-                                </ul>
-                            </div>
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>基金資訊</span></a></li>
+                                <div class="unit-box">
+                                    <ul class="unit-box-list">
+                                        <li class="unit-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>基金新聞</a></li>
+                                        <li class="unit-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>境外基金休市公告</a></li>
+                                        <li class="unit-box-item"><a href="javascript:;"><i class="common-icon menu-sm"></i>國內基金休市公告</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">投資產品公告</a>
-                        <div class="menu menu-right">
-                            <div class="menu-content">
-                                <ul class="menu-list">
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>最新消息</span><i class="common-icon menu-top3 icon-lg mgl-1 mgb-1"></i></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>通路報酬揭露查詢</span></a></li> 
-                                   <li class="menu-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>後收型聲明書查詢</span></a></li>
-                                </ul>
-                            </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">投資產品公告</a>
+                    <div class="unit unit-right">
+                        <div class="unit-content">
+                            <ul class="unit-list">
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>最新消息</span><i class="common-icon menu-top3 icon-lg mgl-1 mgb-1"></i></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>通路報酬揭露查詢</span></a></li> 
+                                <li class="unit-item"><a href="javascript:;"><i class="common-icon menu-big icon-sm mgr-1"></i><span>後收型聲明書查詢</span></a></li>
+                            </ul>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-right">
-                <i class="fal fa-user fa-lg"></i>
-            </div>
+                    </div>
+                </li>
+            </ul>
         </nav>
-    </header>
-</div>
 
-            <!-- 側邊欄 -->
-            <ul class="sidebar-list">
+        <!-- Mobile -->
+        <div class="menu">
+            <div class="menu-wrapper">
+                <div class="menu-head">
+                    <i class="menu-close"></i>
+                </div>
+                <div class="menu-content">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <a class="menu-link" href="javascript:;">樂選基金</a>
+                                <i class="fal fa-angle-up menu-toggle"></i>
+                            </div>
+                            <ul class="menu-expand menu-md">
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">基金績效搜尋</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">基金進階搜尋</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">最新配息查詢</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">基金公司查詢</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">樂知基金學堂</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <a class="menu-link" href="javascript:;">基金點閱排行</a>
+                                <i class="fal fa-angle-up menu-toggle"></i>
+                            </div>
+                            <ul class="menu-expand menu-md">
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">優質特選基金<i class="common-icon menu-top10 icon-lg"></i></a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">核心配置首選<i class="common-icon menu-top10 icon-lg"></i></a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">本行熱銷排行<i class="common-icon menu-top10 icon-lg"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <a class="menu-link" href="javascript:;">遠銀投資觀點</a>
+                                <i class="fal fa-angle-up menu-toggle"></i>
+                            </div>
+                            <ul class="menu-expand menu-md">
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">遠銀市場觀點</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">投研財經展望</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">市場話題時事</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <a class="menu-link" href="javascript:;">樂富財經訊息</a>
+                                <i class="fal fa-angle-up menu-toggle"></i>
+                            </div>
+                            <ul class="menu-expand menu-md">
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">國際金融資訊</a>
+                                        <i class="fal fa-angle-up menu-toggle toggle-md"></i>
+                                    </div>
+                                    <ul class="menu-expand menu-sm">
+                                        <li class="menu-item">
+                                            <div class="menu-title">
+                                                <a class="menu-link" href="/internationalNews.html">國際財經新聞</a>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <div class="menu-title">
+                                                <a class="menu-link" href="/internationalEconomic.html">各國經濟情勢</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">基金資訊</a>
+                                        <i class="fal fa-angle-up menu-toggle toggle-md"></i>
+                                    </div>
+                                    <ul class="menu-expand menu-sm">
+                                        <li class="menu-item">
+                                            <div class="menu-title">
+                                                <a class="menu-link" href="javascript:;">基金新聞</a>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <div class="menu-title">
+                                                <a class="menu-link" href="javascript:;">境外基金休市公告</a>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <div class="menu-title">
+                                                <a class="menu-link" href="javascript:;">國內基金休市公告</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <a class="menu-link" href="javascript:;">投資產品公告</a>
+                                <i class="fal fa-angle-up menu-toggle"></i>
+                            </div>
+                            <ul class="menu-expand menu-md">
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">最新消息<i class="common-icon menu-top3 icon-lg"></i></a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">通路報酬揭露查詢</a>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-title">
+                                        <a class="menu-link" href="javascript:;">後收型聲明書查詢</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidebar-list">
     <li class="sidebar-item">
-        <a class="sidebar-link" data-toggle="modal" data-target="#exampleModal">
+        <a href="javascript:;" class="sidebar-link" data-toggle="modal" data-target="#exampleModal">
             <div class="sidebar-icon"><i class="common-icon sidebar-order"></i></div>
             <div>立即下單</div>
         </a>
     </li>
     <li class="sidebar-item">
-        <a href="#" class="sidebar-link">
+        <a href="javascript:;" class="sidebar-link">
             <div class="sidebar-icon"><i class="common-icon sidebar-dividend"></i></div>
             <div>配息查詢</div>
         </a>
     </li>
     <li class="sidebar-item">
-        <a href="#" class="sidebar-link">
+        <a href="javascript:;" class="sidebar-link">
             <div class="sidebar-icon"><i class="common-icon sidebar-value"></i></div>
             <div>淨值查詢</div>
         </a>
@@ -196,8 +354,40 @@
         </a>
     </li>
 </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- 側邊欄 -->
+            <ul class="sidebar-list">
+    <li class="sidebar-item">
+        <a href="javascript:;" class="sidebar-link" data-toggle="modal" data-target="#exampleModal">
+            <div class="sidebar-icon"><i class="common-icon sidebar-order"></i></div>
+            <div>立即下單</div>
+        </a>
+    </li>
+    <li class="sidebar-item">
+        <a href="javascript:;" class="sidebar-link">
+            <div class="sidebar-icon"><i class="common-icon sidebar-dividend"></i></div>
+            <div>配息查詢</div>
+        </a>
+    </li>
+    <li class="sidebar-item">
+        <a href="javascript:;" class="sidebar-link">
+            <div class="sidebar-icon"><i class="common-icon sidebar-value"></i></div>
+            <div>淨值查詢</div>
+        </a>
+    </li>
+    <li class="sidebar-item">
+        <a href="https://iapp.feib.com.tw/hppApply/application/index" target="_blank" class="sidebar-link">
+            <div class="sidebar-icon"><i class="common-icon sidebar-account"></i></div>
+            <div>立即開戶</div>
+        </a>
+    </li>
+</ul>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -253,5 +443,7 @@
 
         <script src="./lib/jquery/jquery-3.5.1.min.js"></script>
         <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/backToTop.js"></script>
+        <script src="./scripts/header.js"></script>
     </body>
 </html>

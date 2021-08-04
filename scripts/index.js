@@ -63,7 +63,7 @@ $(function () {
   $('.ranking-tabs-item').on('click', function () {
     var tab = $(this).data('tab');
     $('.page-item').removeClass('active');
-    $('#ranking-tabs' + tab + '-content').find('.page-item').eq(0).addClass('active');
+    $('#ranking-tabs-' + tab).find('.page-item').eq(0).addClass('active');
   });
   $('#board-tabs-btn-right').on('click', function (e) {
     var ulWidth = $('.board-tabs-list').get()[0].clientWidth;
@@ -127,18 +127,6 @@ $(function () {
       $('.calculator-tabs-active-line').css('left', itemRef.left).css('width', itemRef.width);
     }
   });
-  $('#BackTop').click(function () {
-    $('html,body').animate({
-      scrollTop: 0
-    }, 500);
-  });
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > $(window).height()) {
-      $('#BackTop').fadeIn(150);
-    } else {
-      $('#BackTop').stop().fadeOut(150);
-    }
-  }).scroll();
   $('.keyword-input').on('input', function () {
     if ($(this).val() == '') {
       $(this).css('color', '#E60000');
