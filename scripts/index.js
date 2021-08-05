@@ -207,10 +207,14 @@ $(function () {
 
     $(this).val(toCurrency(result));
   });
+  $('.calculator-input').on('focus', function () {
+    $(this).parents('.input-text-group').css('border', '1px solid #EE5142');
+  });
   $('.calculator-input').on('blur', function (e) {
     var value = $(this).val().split(',').join('');
     var min = $(this).data('min');
     var result = InputCheckMin(value, min);
     $(this).val(toCurrency(result));
+    $(this).parents('.input-text-group').css('border', '1px solid #E2DED4');
   });
 });

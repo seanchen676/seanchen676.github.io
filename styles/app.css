@@ -378,6 +378,7 @@ ul li:focus {
 body {
   font-family: 'Montserrat','微軟正黑體', sans-serif;
   color: #555;
+  overflow-x: hidden;
 }
 
 .pd-0 {
@@ -930,6 +931,10 @@ select::-ms-expand {
   display: none;
 }
 
+input::-ms-clear {
+  display: none;
+}
+
 i.common-icon {
   background-repeat: no-repeat;
   background-position: center;
@@ -1054,7 +1059,7 @@ i.common-icon.menu-top3 {
   content: "\e901";
 }
 
-.icon-check:before {
+.icon-readMore:before {
   content: "\e902";
 }
 
@@ -1062,7 +1067,7 @@ i.common-icon.menu-top3 {
   width: 100%;
   height: 5px;
   border-radius: 5px;
-  background-color: #F3F2EE;
+  background-color: rgba(226, 222, 212, 0.7);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -1079,17 +1084,13 @@ i.common-icon.menu-top3 {
   height: 16px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #fff;
+  background-color: #E60000;
   border: 2px solid #E2DED4;
   background-image: none;
   margin: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-}
-
-.rangeslider .rangeslider__handle:active {
-  background-color: #E60000;
 }
 
 .rangeslider .rangeslider__handle::after {
@@ -1368,6 +1369,7 @@ ul.breadcrumb li.breadcrumb-item a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -1390,16 +1392,23 @@ ul.breadcrumb li.breadcrumb-item a {
   max-height: 100%;
 }
 
-.header-container header nav.nav-bar .nav-container .logo-container a.logo .info {
+.header-container header nav.nav-bar .nav-container .logo-container a.info {
+  height: 100%;
   margin-left: 12px;
   padding: 0 12px;
   font-weight: bold;
   font-size: 18px;
   position: relative;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.header-container header nav.nav-bar .nav-container .logo-container a.logo .info::before {
+.header-container header nav.nav-bar .nav-container .logo-container a.info::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -1412,21 +1421,21 @@ ul.breadcrumb li.breadcrumb-item a {
 }
 
 @media screen and (max-width: 767px) {
-  .header-container header nav.nav-bar .nav-container .logo-container a.logo .info {
+  .header-container header nav.nav-bar .nav-container .logo-container a.info {
     font-size: 14px;
     font-weight: normal;
   }
-  .header-container header nav.nav-bar .nav-container .logo-container a.logo .info::before {
+  .header-container header nav.nav-bar .nav-container .logo-container a.info::before {
     height: 18px;
   }
 }
 
 @media screen and (max-width: 414px) {
-  .header-container header nav.nav-bar .nav-container .logo-container a.logo .info {
+  .header-container header nav.nav-bar .nav-container .logo-container a.info {
     font-size: 12px;
     font-weight: normal;
   }
-  .header-container header nav.nav-bar .nav-container .logo-container a.logo .info::before {
+  .header-container header nav.nav-bar .nav-container .logo-container a.info::before {
     height: 16px;
   }
 }
@@ -1579,7 +1588,7 @@ ul.breadcrumb li.breadcrumb-item a {
 }
 
 .header-container header nav.nav-bar ul.nav-list li.nav-item .unit .unit-content ul.unit-list li.unit-item a:hover {
-  font-weight: bold;
+  color: #E60000;
 }
 
 .header-container header nav.nav-bar ul.nav-list li.nav-item .unit .unit-content ul.unit-list li.unit-item a::before {
@@ -1597,7 +1606,7 @@ ul.breadcrumb li.breadcrumb-item a {
 .header-container header nav.nav-bar ul.nav-list li.nav-item .unit .unit-content ul.unit-list li.unit-item a::after {
   content: "";
   position: absolute;
-  background-color: #7E5730;
+  background-color: #E60000;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   width: 0;
@@ -1631,7 +1640,7 @@ ul.breadcrumb li.breadcrumb-item a {
 }
 
 .header-container header nav.nav-bar ul.nav-list li.nav-item .unit .unit-content ul.unit-list .unit-box ul.unit-box-list li.unit-box-item a:hover {
-  font-weight: bold;
+  color: #E60000;
 }
 
 .menu {
@@ -2254,18 +2263,18 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
 }
 
 @media screen and (max-width: 1024px) {
-  .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs1-content-pc, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs2-content-pc, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs3-content-pc {
+  .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.ranking-tabs-pc {
     display: none;
   }
 }
 
-.home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs1-content-mobile, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs2-content-mobile, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs3-content-mobile {
+.home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.ranking-tabs-mobile {
   display: none;
   height: auto;
 }
 
 @media screen and (max-width: 1024px) {
-  .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs1-content-mobile, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs2-content-mobile, .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.tabs3-content-mobile {
+  .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody.ranking-tabs-mobile {
     display: block;
   }
 }
@@ -2299,6 +2308,17 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   font-size: 18px;
   vertical-align: middle;
   text-align: center;
+}
+
+.home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody tr td a.ranking-tabs-link {
+  font-weight: bold;
+  text-align: left;
+  color: #212529;
+  display: block;
+}
+
+.home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody tr td a.ranking-tabs-link:hover {
+  color: #E60000;
 }
 
 .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content table tbody tr td .change {
@@ -2720,14 +2740,14 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 19px 13px;
+  padding: 20px 13px;
   font-weight: bold;
   font-size: 18px;
 }
 
 @media screen and (max-width: 1024px) {
   .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs ul.calculator-common-tabs-list li.calculator-common-tabs-item a, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs ul.calculator-common-tabs-list li.calculator-common-tabs-item a {
-    padding: 19px 10px;
+    padding: 20px 10px;
   }
 }
 
@@ -2952,7 +2972,7 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   }
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input {
   width: 1px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -2965,33 +2985,33 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
 }
 
 @media screen and (max-width: 575px) {
-  .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input {
+  .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input {
     border-radius: 4px 0 0 4px;
     font-size: 16px;
   }
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input:focus, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input:focus {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input:focus, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input:focus {
   outline: none;
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-webkit-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-webkit-input-placeholder {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-webkit-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-webkit-input-placeholder {
   color: #EE5142;
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-moz-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-moz-placeholder {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-moz-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-moz-placeholder {
   color: #EE5142;
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input:-ms-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input:-ms-input-placeholder {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input:-ms-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input:-ms-input-placeholder {
   color: #EE5142;
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-ms-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::-ms-input-placeholder {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-ms-input-placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::-ms-input-placeholder {
   color: #EE5142;
 }
 
-.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input::placeholder {
+.home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #singleInvestment-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::placeholder, .home-page .home-wrapper section.section.section-computer .computer-container .calculator .calculator-content #calculator-tabs .calculator-tabs-content #dollarCostAveraging-tabs .calculator-common-tabs-content .calculator-common-tabs-box ul.calculator-list li.calculator-item .input-text-group input.calculator-input::placeholder {
   color: #EE5142;
 }
 
@@ -3104,8 +3124,8 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   position: absolute;
   top: -15px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   width: calc(100% - 60px);
   max-width: 1200px;
   height: 110px;
@@ -3738,7 +3758,7 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
 }
 
 .home-page .home-wrapper section.section.section-computer .computer-container .community .community-content a.community-preview-img:hover .community-mask {
-  background-color: #353535e6;
+  background-color: rgba(53, 53, 53, 0.9);
 }
 
 .home-page .home-wrapper section.section.section-computer .computer-container .community .community-content a.community-preview-img::before {
@@ -3768,7 +3788,7 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-color: #353535b3;
+  background-color: rgba(53, 53, 53, 0.7);
 }
 
 .home-page .home-wrapper section.section.section-computer .computer-container .community .community-content a.community-preview-img .community-mask::before {
@@ -3803,12 +3823,31 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   display: block;
   padding: 11px 0;
   border-bottom: 1px solid #E2DED4;
+  position: relative;
 }
 
 @media screen and (max-width: 575px) {
   .home-page .home-wrapper section.section.section-computer .computer-container .community .community-content ul.community-list li.community-item a.community-link {
     padding: 15px 0;
   }
+}
+
+.home-page .home-wrapper section.section.section-computer .computer-container .community .community-content ul.community-list li.community-item a.community-link::before {
+  content: "";
+  position: absolute;
+  background-color: #E60000;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 0%;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+}
+
+.home-page .home-wrapper section.section.section-computer .computer-container .community .community-content ul.community-list li.community-item a.community-link:hover::before {
+  right: auto;
+  left: 0;
+  width: 100%;
 }
 
 .home-page .home-wrapper section.section.section-computer .computer-container .community .community-content ul.community-list li.community-item a.community-link .date {
@@ -4906,7 +4945,12 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
 a.read-more {
   cursor: pointer;
   color: #E60000;
-  padding: 2px 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 575px) {
@@ -4915,16 +4959,29 @@ a.read-more {
   }
 }
 
-a.read-more:hover > span {
-  border-bottom: 1px solid #E60000;
+a.read-more > span {
+  position: relative;
+}
+
+a.read-more > span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+a.read-more:hover > span::before {
+  background-color: #E60000;
 }
 
 a.read-more:focus {
   color: #544545;
 }
 
-a.read-more:focus > span {
-  border-bottom: 1px solid #544545;
+a.read-more:focus > span::before {
+  background-color: #544545;
 }
 
 @media screen and (max-width: 767px) {
@@ -4951,7 +5008,7 @@ a.read-more:focus > span {
   background-color: #D61E1E;
   background-image: url("../images/background/inside_masthead_left_bg_pc.png"), url("../images/background/inside_masthead_right_bg_pc.png");
   background-position: left bottom, right bottom;
-  background-size: 380px, 519px;
+  background-size: 19.7916667%, 27.03125%;
   background-repeat: no-repeat;
 }
 
@@ -5053,7 +5110,7 @@ a.read-more:focus > span {
   height: 19px;
   top: 4px;
   left: 0;
-  background-color: #ffa29880;
+  background-color: rgba(255, 162, 152, 0.5);
 }
 
 @media screen and (max-width: 1024px) {
