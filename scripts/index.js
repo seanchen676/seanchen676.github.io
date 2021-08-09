@@ -217,4 +217,14 @@ $(function () {
     $(this).val(toCurrency(result));
     $(this).parents('.input-text-group').css('border', '1px solid #E2DED4');
   });
+  $('.community-preview-img').bind('mouseenter mouseleave touchstart touchend', function () {
+    $(this).toggleClass('active');
+    $(this).siblings('.community-list').find('.community-link').first().toggleClass('active');
+  });
+  $('.community-link').bind('mouseenter mouseleave touchstart touchend', function () {
+    $(this).toggleClass('active');
+  });
+  $('.community-link:first').bind('mouseenter mouseleave touchstart touchend', function () {
+    $(this).parents('.community-list').siblings('.community-preview-img').toggleClass('active');
+  });
 });
