@@ -2359,8 +2359,7 @@ ul.sidebar-list li.sidebar-item .sidebar-link .sidebar-icon {
   .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs ul.ranking-tabs-list li.ranking-tabs-item a {
     font-size: 16px;
     text-align: center;
-    margin: 0 auto;
-    width: 63px;
+    padding: 0 calc((100% - 63px) / 2);
   }
 }
 
