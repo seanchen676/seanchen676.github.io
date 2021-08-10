@@ -2028,8 +2028,14 @@ footer .footer-container ul.footer-tools-list {
 
 @media screen and (max-width: 575px) {
   footer .footer-container ul.footer-tools-list {
-    padding: 0 15px;
+    padding: 0;
   }
+}
+
+footer .footer-container ul.footer-tools-list li.footer-tools-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 footer .footer-container ul.footer-tools-list li.footer-tools-item a.footer-tools-link {
