@@ -2693,17 +2693,6 @@ footer .footer-container ul.footer-tools-list li.footer-tools-item a.footer-tool
   }
 }
 
-.home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content .read-more-container {
-  text-align: right;
-  padding-bottom: 10px;
-}
-
-@media screen and (max-width: 1024px) {
-  .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content #ranking-tabs .ranking-tabs-content .read-more-container {
-    display: none;
-  }
-}
-
 .home-page .home-wrapper section.section.section-ranking .ranking-container .ranking-content nav.pagination-nav {
   display: none;
   -webkit-box-pack: center;
