@@ -949,7 +949,7 @@ input::-ms-clear {
   background-position: center;
   background-size: contain;
   width: 30px;
-  display: block;
+  display: inline-block;
 }
 
 .common-icon.icon-lg {
